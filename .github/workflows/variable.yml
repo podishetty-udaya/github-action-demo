@@ -8,18 +8,7 @@ jobs:
     job_1:
         runs-on: ubuntu-latest
         env:
-            place_2: "Inside the job1"
+            place_2: "Udaya"
         steps:
             - name: Print the variable
-              run: echo "The variable is $place_2 , $place and $place_3"
-              env:
-                place_3: "Inside the step1"
-    job_2:
-        runs-on: ubuntu-latest
-        env:
-            place_4: "Inside the job2"  
-        steps:
-            - name: Print the variable
-              run: echo "The variable is $place_4 , $place and $place_5"
-              env:
-                place_5: "Inside the step2"
+              run: echo "$place_2 is using the repository variable with project_id ${{ vars.PROJECT_ID }} , secret ${{secrets.SECRET_ID}} inside $place"
